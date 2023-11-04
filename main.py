@@ -8,14 +8,13 @@ import youtube_dl
 import threading
 import os
 
-
 window = Tk()
-window.title("Descarga de Vídeo o Audio")
+window.title("Video and Audio Downloader")
 window.configure(background = "white")
 
 def didNotWork():
     url_entry.delete(0, END)
-    url_entry.insert(END, "Dejate de inventar, prueba otra cosa! (Prueba otro link!)")
+    url_entry.insert(END, "That link didn't work!  Try again.")
 
 def onClickVideo():
     try:
@@ -41,14 +40,17 @@ def onClickAudio():
 
 
 ##Create a label
-Label (window, text = "Copie y pegue el link de YouTube: ", fg = "black", font = "none 12 bold"). grid(row = 0, column = 0)
+Label (window, text = "YouTube Link: ", fg = "black", font = "none 12 bold"). grid(row = 0, column = 0 )
 
 ##Create the text entry
-url_entry = Entry(window, width = 100, bg = "white")
+url_entry = Entry(window, width = 50, bg = "white")
 url_entry.grid(row = 0, column = 1)
 
 ##Create a Button
-Button(window, text = "Presione este botón para DESCARGAR VIDEO", command = onClickVideo).grid(row = 1, column = 1)
-Button(window, text = "Presione este botón para DESCARGAR AUDIO", command = onClickAudio).grid(row = 2, column = 1)
+Button(window, text = "Download Video", command = onClickVideo).grid(row = 1, column = 0)
+Button(window, text = "Download Audio", command = onClickAudio).grid(row = 1, column = 1)
+
+##Create a Button Frame
+
 
 window.mainloop()
