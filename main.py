@@ -9,7 +9,7 @@ import threading
 import os
 
 window = Tk()
-window.title("Video/Audio Downloader")
+window.title("YouTube Yoink-o-Matic!")
 window.configure(background = "white")
 
 def didNotWork():
